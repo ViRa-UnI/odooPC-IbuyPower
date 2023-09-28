@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_stock_quant_tree" model="ir.ui.view">
+        <field name="name">stock.quant.tree</field>
+        <field name="model">stock.quant</field>
+        <field name="arch" type="xml">
+            <tree string="Stock Quant">
+                <field name="product_id"/>
+                <field name="location_id"/>
+                <field name="quantity"/>
+                <field name="reserved_quantity"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_stock_quant_form" model="ir.ui.view">
+        <field name="name">stock.quant.form</field>
+        <field name="model">stock.quant</field>
+        <field name="arch" type="xml">
+            <form string="Stock Quant">
+                <sheet>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="location_id"/>
+                        <field name="quantity"/>
+                        <field name="reserved_quantity"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_stock_quant" model="ir.actions.act_window">
+        <field name="name">Stock Quants</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">stock.quant</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Stock Quant
+            </p>
+            <p>
+                Click to start building your custom PC.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_stock_quant" name="Stock Quants" parent="custom_pc_builder.menu_custom_pc_builder" action="action_stock_quant"/>
+</odoo>

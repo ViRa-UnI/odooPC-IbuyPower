@@ -1,0 +1,57 @@
+/* custom_pc_builder.css */
+
+body {
+    background-color: #f5f5f5;
+}
+
+.pc_builder_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.pc_builder_title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.pc_builder_form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.pc_builder_form input,
+.pc_builder_form select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.pc_builder_form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pc_builder_form button:hover {
+    background-color: #45a049;
+}
+
+.pc_builder_error {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.pc_builder_success {
+    color: green;
+    margin-bottom: 20px;
+}

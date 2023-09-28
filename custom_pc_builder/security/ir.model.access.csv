@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pc_builder,access_pc_builder,model_pc_builder,base.group_user,1,1,1,1
+access_product_template,access_product_template,model_product_template,base.group_user,1,1,1,1
+access_product_product,access_product_product,model_product_product,base.group_user,1,1,1,1
+access_sale_order,access_sale_order,model_sale_order,base.group_user,1,1,1,1
+access_sale_order_line,access_sale_order_line,model_sale_order_line,base.group_user,1,1,1,1
+access_stock_picking,access_stock_picking,model_stock_picking,base.group_user,1,1,1,1
+access_stock_move,access_stock_move,model_stock_move,base.group_user,1,1,1,1
+access_stock_quant,access_stock_quant,model_stock_quant,base.group_user,1,1,1,1
+access_stock_inventory,access_stock_inventory,model_stock_inventory,base.group_user,1,1,1,1
+access_stock_warehouse,access_stock_warehouse,model_stock_warehouse,base.group_user,1,1,1,1
+access_stock_location,access_stock_location,model_stock_location,base.group_user,1,1,1,1
+access_res_partner,access_res_partner,model_res_partner,base.group_user,1,1,1,1

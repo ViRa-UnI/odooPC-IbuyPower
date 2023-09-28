@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_order_line_form" model="ir.ui.view">
+        <field name="name">sale.order.line.form</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <form string="Sale Order Line">
+                <sheet>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="product_uom_qty"/>
+                        <field name="price_unit"/>
+                        <field name="discount"/>
+                        <field name="tax_id" widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <field name="name"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_sale_order_line_tree" model="ir.ui.view">
+        <field name="name">sale.order.line.tree</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <tree string="Sale Order Lines">
+                <field name="product_id"/>
+                <field name="product_uom_qty"/>
+                <field name="price_unit"/>
+                <field name="discount"/>
+                <field name="tax_id"/>
+                <field name="name"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_sale_order_line_search" model="ir.ui.view">
+        <field name="name">sale.order.line.search</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <search string="Search Sale Order Line">
+                <field name="product_id"/>
+                <field name="name"/>
+                <field name="state"/>
+                <filter string="Draft" name="draft" domain="[('state','=','draft')]"/>
+                <filter string="Confirmed" name="confirmed" domain="[('state','=','sale')]"/>
+                <filter string="Done" name="done" domain="[('state','=','done')]"/>
+                <filter string="Cancelled" name="cancel" domain="[('state','=','cancel')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_sale_order_lines" model="ir.actions.act_window">
+        <field name="name">Sale Order Lines</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the first sale order line
+            </p>
+            <p>
+                Add all your sale order lines here. You'll be able to manage your sales efficiently.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_sale_order_lines" name="Sale Order Lines" parent="sale.menu_sale_order" action="action_sale_order_lines"/>
+</odoo>

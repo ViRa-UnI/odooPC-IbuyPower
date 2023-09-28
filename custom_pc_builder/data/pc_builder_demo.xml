@@ -1,0 +1,46 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Product Template -->
+        <record id="product_template_1" model="product.template">
+            <field name="name">Custom PC</field>
+            <field name="type">product</field>
+            <field name="list_price">1000.00</field>
+            <field name="standard_price">800.00</field>
+        </record>
+
+        <!-- Product Product -->
+        <record id="product_product_1" model="product.product">
+            <field name="product_tmpl_id" ref="product_template_1"/>
+        </record>
+
+        <!-- Sale Order -->
+        <record id="sale_order_1" model="sale.order">
+            <field name="partner_id" ref="base.res_partner_1"/>
+        </record>
+
+        <!-- Sale Order Line -->
+        <record id="sale_order_line_1" model="sale.order.line">
+            <field name="order_id" ref="sale_order_1"/>
+            <field name="product_id" ref="product_product_1"/>
+            <field name="product_uom_qty">1</field>
+            <field name="price_unit">1000.00</field>
+        </record>
+
+        <!-- Stock Picking -->
+        <record id="stock_picking_1" model="stock.picking">
+            <field name="partner_id" ref="base.res_partner_1"/>
+            <field name="picking_type_id" ref="stock.picking_type_out"/>
+        </record>
+
+        <!-- Stock Move -->
+        <record id="stock_move_1" model="stock.move">
+            <field name="name">Move PC</field>
+            <field name="product_id" ref="product_product_1"/>
+            <field name="product_uom_qty">1</field>
+            <field name="product_uom" ref="uom.product_uom_unit"/>
+            <field name="location_id" ref="stock.stock_location_stock"/>
+            <field name="location_dest_id" ref="stock.stock_location_customers"/>
+            <field name="picking_id" ref="stock_picking_1"/>
+        </record>
+    </data>
+</odoo>
