@@ -1,0 +1,65 @@
+```xml
+<odoo>
+    <record id="view_stock_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="arch" type="xml">
+            <form string="Stock Picking">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="product_uom_qty"/>
+                        <field name="product_uom"/>
+                        <field name="location_id"/>
+                        <field name="location_dest_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Additional Info">
+                            <group>
+                                <field name="origin"/>
+                                <field name="backorder_id"/>
+                                <field name="move_type"/>
+                                <field name="priority"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_stock_picking_tree" model="ir.ui.view">
+        <field name="name">stock.picking.tree</field>
+        <field name="model">stock.picking</field>
+        <field name="arch" type="xml">
+            <tree string="Stock Picking">
+                <field name="name"/>
+                <field name="origin"/>
+                <field name="product_id"/>
+                <field name="product_uom_qty"/>
+                <field name="product_uom"/>
+                <field name="location_id"/>
+                <field name="location_dest_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_stock_picking" model="ir.actions.act_window">
+        <field name="name">Stock Picking</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">stock.picking</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new stock picking.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_stock_picking" name="Stock Picking" parent="custom_pc_builder.menu_custom_pc_builder" sequence="20" action="action_stock_picking"/>
+</odoo>
+```

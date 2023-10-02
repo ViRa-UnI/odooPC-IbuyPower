@@ -1,0 +1,20 @@
+<t>
+    <t t-name="custom_pc_builder.pc_builder_template">
+        <div class="pc_builder">
+            <h1>Custom PC Builder</h1>
+            <div class="pc_builder_content">
+                <t t-foreach="products" t-as="product">
+                    <div class="product_card">
+                        <img t-att-src="product.image_url" alt="Product Image"/>
+                        <div class="product_info">
+                            <h2 t-esc="product.name"/>
+                            <p t-esc="product.description"/>
+                            <p><strong>Price: </strong><span t-esc="product.price"/></p>
+                            <button type="button" class="add_to_cart" t-att-data-product-id="product.id">Add to Cart</button>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+</t>

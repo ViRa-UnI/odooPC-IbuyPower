@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+        <!-- PC Builder Form View -->
+        <record id="view_pc_builder_form" model="ir.ui.view">
+            <field name="name">pc.builder.form</field>
+            <field name="model">pc.builder</field>
+            <field name="arch" type="xml">
+                <form string="PC Builder">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                        <notebook>
+                            <page string="Components">
+                                <field name="component_ids">
+                                    <tree editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="quantity"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- PC Builder Tree View -->
+        <record id="view_pc_builder_tree" model="ir.ui.view">
+            <field name="name">pc.builder.tree</field>
+            <field name="model">pc.builder</field>
+            <field name="arch" type="xml">
+                <tree string="PC Builder">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- PC Builder Action -->
+        <record id="action_pc_builder" model="ir.actions.act_window">
+            <field name="name">PC Builder</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pc.builder</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new PC Builder
+                </p>
+            </field>
+        </record>
+
+        <!-- PC Builder Menu -->
+        <menuitem id="menu_pc_builder" name="PC Builder" action="action_pc_builder"/>
+    </data>
+</odoo>

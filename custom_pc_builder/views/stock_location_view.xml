@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_stock_location_form" model="ir.ui.view">
+        <field name="name">stock.location.form</field>
+        <field name="model">stock.location</field>
+        <field name="arch" type="xml">
+            <form string="Stock Location">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="location_id"/>
+                        <field name="usage"/>
+                        <field name="scrap_location"/>
+                        <field name="return_location"/>
+                        <field name="barcode"/>
+                        <field name="posx"/>
+                        <field name="posy"/>
+                        <field name="posz"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_stock_location_tree" model="ir.ui.view">
+        <field name="name">stock.location.tree</field>
+        <field name="model">stock.location</field>
+        <field name="arch" type="xml">
+            <tree string="Stock Locations">
+                <field name="name"/>
+                <field name="location_id"/>
+                <field name="usage"/>
+                <field name="scrap_location"/>
+                <field name="return_location"/>
+                <field name="barcode"/>
+                <field name="posx"/>
+                <field name="posy"/>
+                <field name="posz"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_stock_locations" model="ir.actions.act_window">
+        <field name="name">Stock Locations</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">stock.location</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Stock Location
+            </p>
+            <p>
+                This will create a new stock location for your custom PC parts.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_stock_locations" name="Stock Locations" parent="stock.menu_stock_root" action="action_stock_locations"/>
+</odoo>
